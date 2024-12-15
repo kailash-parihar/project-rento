@@ -1,0 +1,182 @@
+/* Header Specific Styles */
+
+/* Navbar */
+.navbar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 0.5rem 0;
+    /* border-radius: 15px; */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-image {
+    width: 60px;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+    /* Center the navigation links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e04f07;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border: 2px solid gainsboro;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    color: #000;
+}
+
+.download .btn-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Menu Toggle Styles */
+.menu-toggle {
+    display: none;
+    /* Initially hidden */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+
+    /* Fix header height */
+    .navbar {
+        height: 50px;
+        padding: 0 1.5rem;
+        flex-direction: row;
+        /* keep everything aligned in rows */
+    }
+
+    /* Hide action buttons on mobile */
+    .action-buttons {
+        display: none;
+        /* Buttons won't show up in mobile view */
+    }
+
+    /* Adjust navigation links for mobile */
+    .nav-links {
+        display: none;
+        /* Default me hidden */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        /* will appear below the navigation bar */
+        left: 0;
+        right: 0;
+        background-color: #1a1a1a;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    /* Show nav-links when toggle is clicked */
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Toggle button positioning */
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Center the logo */
+    .logo {
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Slightly smaller font for mobile */
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust the logo size */
+    .logo-image {
+        width: 50px;
+    }
+}
